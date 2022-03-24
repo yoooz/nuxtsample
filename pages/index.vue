@@ -5,6 +5,9 @@
         <NuxtLogo />
         <VuetifyLogo />
       </v-card>
+      <v-card class="logo py-4 d-flex justify-center">
+        <Test />
+      </v-card>
       <v-card>
         <v-card-title class="headline">
           Welcome to the Vuetify + Nuxt.js template
@@ -81,6 +84,7 @@
 </template>
 
 <script>
+import Test from '@/components/Test.vue'
 export default {
   name: 'IndexPage',
 }
