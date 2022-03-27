@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    {{ season.seasonName }}
+    {{ seasonName }}
     <v-list>
       <v-list-item
         v-for="item in items"
@@ -14,15 +14,28 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, SetupContext } from '@vue/composition-api'
+import { defineComponent, SetupContext, computed } from '@vue/composition-api'
 import { useSeason } from '@/store/season'
+import { storeToRefs } from 'pinia'
 
 export default defineComponent({
-  setup() {
+  setup(props) {
+    console.dir(props)
     const season = useSeason()
+
+    const seasonName = computed(() => hoge(season.seasonName))
+    
+    function hoge(item: string): string {
+      return item + 'hoge'
+    }
+
+    function fuga(): string {
+      return ''
+    }
 
     return {
       season,
+      seasonName,
     }
   },
   data: () => {
