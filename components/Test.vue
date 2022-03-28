@@ -10,13 +10,15 @@
         {{ item.name }}
       </v-list-item>
     </v-list>
+    <v-btn @click='test()'>
+      button
+    </v-btn>
   </v-container>
 </template>
 
 <script lang="ts">
 import { defineComponent, SetupContext, computed } from '@vue/composition-api'
 import { useSeason } from '@/store/season'
-import { storeToRefs } from 'pinia'
 
 export default defineComponent({
   setup(props) {
@@ -48,5 +50,10 @@ export default defineComponent({
       ],
     }
   },
+  methods: {
+    test() {
+      console.dir(this.$deps.repository)
+    }
+  }
 })
 </script>

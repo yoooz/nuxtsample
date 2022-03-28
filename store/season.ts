@@ -8,6 +8,7 @@ export const useSeason = defineStore('season', {
     setSeasonNameText(val: string) {
       this.seasonNameText = val
       console.log('hoge')
+      console.dir(this.$nuxt.app.$deps.repository)
     },
   },
   getters: {
